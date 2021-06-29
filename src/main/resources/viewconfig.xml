@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <VSNode splits="1.0">
+        <CNode>
+          <!--    <Component label="SPARQL Query">
+                <Property id="pluginId" value="org.protege.editor.owl.rdf.SparqlQueryView"/>
+            </Component>
+          -->
+          <Component label="CEP Modeller">
+                <Property id="pluginId" value="es.upv.pros.pvalderas.cep-modeller"/>
+            </Component>
+        </CNode>
+    </VSNode>
+</layout>

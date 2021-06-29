@@ -1,0 +1,7 @@
+target/
+.idea/*
+*.iml
+.metadata/
+.DS_Store
+RemoteSystemsTempFiles/
+.settings/
