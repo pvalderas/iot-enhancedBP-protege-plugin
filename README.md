@@ -2,7 +2,7 @@
 
 This repository contains a Protegee plugin to facilitate the creation of high-level events from low-level context data within the microservice architecture to support IoT-enhanced BPs available in the following Github repository: [iot-enhanced-business-process-infrastructure](https://github.com/pvalderas/iot-enhanced-business-process-infrastructure). According to this architecture, business microservices are in charge of managing IoT devices and publish low-level context data in an Event bus. A Context Monitor is in charge of analyzing this data and apply SPARQL rules in order to indentify and inject high-level events into a BP Controller microservice that is responsible of executing a BPMN model. 
 
-The plugin of this repository facilitates the creation of the SPARQL rules from the context data published in the Event Bus. It is an extension of the SPARQL Tab plugin available in the follwing [Github repository](https://github.com/protegeproject/sparql-query-plugin)
+The plugin of this repository facilitates the creation of the SPARQL rules from the context data published in the Event Bus. It is an extension of the SPARQL Tab plugin available in the following [Github repository](https://github.com/protegeproject/sparql-query-plugin)
 
 # About
 
@@ -31,3 +31,11 @@ STEP 3: Testing the SPARQL rules
 STEP 4: Map SPARQL rule with high-level event and deploying into the Context Monitor
 
 ![step4](./step4.gif "Step 4")
+
+# Compilation
+
+Use Maven:
+
+```console
+mvn clean package;
+```
