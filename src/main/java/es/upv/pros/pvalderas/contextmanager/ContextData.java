@@ -138,11 +138,11 @@ public class ContextData extends JDialog {
 		JButton btnAddPropertyTo = new JButton("Add Data Property to Query");
 		btnAddPropertyTo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String obs=observationList.getSelectedValue().toString().replaceAll(" ","");
-				String sensor=deviceList.getSelectedValue().toString().replaceAll(" ","");
-				String resultName=resultLbl.getText().substring(resultLbl.getText().indexOf(":")+2).replaceAll(" ","");
-				String observedProperty=propertyLbl.getText().substring(propertyLbl.getText().indexOf(":")+2).replaceAll(" ","");
-				String dataProp=dataList.getSelectedValue().toString().substring(0, dataList.getSelectedValue().toString().indexOf(":")).replaceAll(" ","");
+				String obs=observationList.getSelectedValue().toString().replaceAll(" ","").toLowerCase();
+				String sensor=deviceList.getSelectedValue().toString().replaceAll(" ","").toLowerCase();
+				String resultName=resultLbl.getText().substring(resultLbl.getText().indexOf(":")+2).replaceAll(" ","").toLowerCase();
+				String observedProperty=propertyLbl.getText().substring(propertyLbl.getText().indexOf(":")+2).replaceAll(" ","").toLowerCase();
+				String dataProp=dataList.getSelectedValue().toString().substring(0, dataList.getSelectedValue().toString().indexOf(":")).replaceAll(" ","").toLowerCase();
 				
 				String paneText=ContextData.this.queryPane.getText();
 		
@@ -151,13 +151,13 @@ public class ContextData extends JDialog {
 				String obsText="	?obs"+observedProperty+" a sosa:Observation .\n";
 				obsText+="	?obs"+observedProperty+" sosa:madeBySensor :"+sensor+" .\n";
 				obsText+="	?obs"+observedProperty+" sosa:observedProperty :"+observedProperty+" .\n";
-				obsText+="	?obs"+observedProperty+" sosa:hasResult ?result .\n";
-				obsText+="	?result"+observedProperty+" :name '"+resultName+"' .\n";
+				obsText+="	?obs"+observedProperty+" sosa:hasResult ?result"+observedProperty+" .\n";
+				//obsText+="	?result"+observedProperty+" :name '"+resultName+"' .\n";
 				obsText+=dataPropText;
 				
 				String query="";
 				if(paneText.length()==0){		
-					query+="PREFIX : <http://pros.upv.es/pvalderas/IoTDevices>\n"; //"http://pros.upv.es/pvalderas/IoTEnhancedBP/"+
+					query+="PREFIX : <http://pros.upv.es/pvalderas/IoTEnhancedBP/"+system+"#>\n"; //"http://pros.upv.es/pvalderas/IoTEnhancedBP/"+
 					query+="PREFIX sosa: <http://www.w3.org/ns/sosa/>\n";
 					query+="ASK {\n";
 					query+=obsText;
