@@ -26,8 +26,8 @@ STEP 2: Definition of SPARQL rules for the high-level events
 
 STEP 3: Testing the SPARQL rules 
 
-![step3](./step31.gif "Step 3")
+![step3](./step3.gif "Step 3")
 
 STEP 4: Map SPARQL rule with high-level event and deploying into the Context Monitor
 
-![step4](./step41.gif "Step 4")
+![step4](./step4.gif "Step 4")
